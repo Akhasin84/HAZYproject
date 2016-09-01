@@ -1,0 +1,162 @@
+@mixin login{
+	color: $regTextColor;
+	font-family: $logoFont;
+}
+
+@mixin headerIMG{
+	max-width: 100%;
+	margin-right: 0.5em;
+	vertical-align: bottom;
+}
+
+.header{
+	display: flex;
+	justify-content: space-between;
+	width: 94.4%;
+	// width 1180px % 1250px
+	margin: 0 auto;
+	border-bottom: 1px solid rgba(96,96,96,0.1);
+	padding: 2em 0;
+	&__logo{
+		width: 2.5em;
+		height: 2.5em;
+		margin: auto 0;
+		background-color: $blackColor;
+		padding-left: 0.5em;
+    	padding-top: 0.5em;
+		&_text{
+			margin: 0;
+			color: $pageBack;
+			font-family: $logoFont;
+		}
+	}
+	& .nav{
+		list-style: none;
+		margin-right: 1.8em;
+		&__item{
+			display: inline-block;
+			margin-right: 4em;
+			margin-top: 0.9em;
+			&::last-child{
+				margin-right: 0;
+			}
+			&_link{
+				text-decoration: none;
+				color: $regTextColor;
+				font-family: $logoFont;
+				transition: 0.3s;
+				&:hover{
+					color: $bodyBack;
+				}
+			}
+		}
+	}
+	&__infoBlock{
+		display: flex;
+		justify-content: space-between;
+		padding-top: 1.8em;
+		&_login{
+			margin-right: 2em;
+			& img{
+				@include headerIMG;
+			}
+			& span{
+				@include login;
+				& a{
+					text-decoration: none;
+					@include login;
+				}
+				& .out{
+					color: $orangeColor;
+				}
+			}
+		}
+		&_basket{
+			@extend .header__infoBlock_login;
+		}
+		&_search{
+			margin-top: -0.7em;
+			// vertical-align: bottom;
+			& input{
+				width: 12em;
+				height: 3.6em;
+				border: 1px solid $firmGreyColor;
+				color: $regTextColor;
+				vertical-align: bottom;
+				padding-left: 1em;
+				font-family: $logoFont;
+			}
+			& a{
+				display: inline-block;
+				background-color: $firmGreyColor;
+				width: 2.5em;
+				height: 2.5em;
+				border: 1px solid $firmGreyColor;
+				vertical-align: top;
+				padding-top: 0.7em;
+				padding-left:0.6em; 
+			}
+			& .nosearch{
+				background-color: $pageBack;
+			}
+		}
+	}
+}
+
+
+@media screen and(max-width: 1247px){
+ 	.header .nav__item{
+		margin-right: 2em;
+	}
+}
+
+@media screen and(max-width: 1076px){
+	.header{
+		display: block;
+		text-align: center;
+	}
+ 	.header__logo{
+		display: block;
+		width: 15em;
+		margin: 0 auto;
+		padding-left: 0;
+	}
+	.nav{
+		display: inline-block;
+	}
+	.header__infoBlock{
+		justify-content: space-around;
+	}
+}
+
+@media screen and(max-width: 510px){
+	.header{
+		width: 100%;
+	}
+ 	.header__logo{
+		width: 20em;	
+	}
+
+	.header__infoBlock{
+		display: block;
+	}
+
+	.header__infoBlock_login,
+	.header__infoBlock_basket,
+	.header__infoBlock_search{
+		margin-bottom: 3em;
+	}
+
+	
+}
+
+@media screen and(max-width: 360px){
+ 	.header__logo{
+		width: 100%;	
+	}
+}
+
+
+
+
+

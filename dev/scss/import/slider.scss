@@ -1,0 +1,16 @@
+.slider{
+	@include space;
+	background-color: $firmGreyColor;
+	display: flex;
+	justify-content: space-between;
+	padding: 0;
+	&_left{
+		background-color: #e4e4e4;
+		width: 3%;
+		height: 8em;
+		padding-top: 3em; 
+	}
+	&_right{
+		@extend .slider_left;
+	}
+}

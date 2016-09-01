@@ -1,0 +1,261 @@
+*{
+	box-sizing: border-box;
+}
+
+@import 'import/varibles';
+
+@import 'import/general';
+
+@import 'import/header';
+
+@mixin space{
+	width: 94.4%;
+	margin: 0 auto;
+	padding: 10% 0;
+	text-align: center;
+}
+
+.packshot{
+	@include space;
+	&_slogan{
+		color: $regTextColor;
+		font-family: $logoFont;
+		font-size: 5em;
+		text-transform: uppercase;
+		margin-bottom: 0.3em;
+	}
+	&_description{
+		color: $firmGreyColor;
+		font-family: $descrFont;
+		font-size: 1.6em;
+		font-style: italic;
+		margin-top: 0;
+	}
+	& a{
+		display: inline-block;
+		padding: 1.53% 0;
+		text-decoration: none;
+		width: 19.61%;
+		border: 1px solid $regTextColor;
+		color: $regTextColor;
+		font-family: $logoFont;
+		text-transform: uppercase;
+	}
+}
+
+
+@mixin forBlocks{
+	display: inline-block;
+	width: 25%;
+	vertical-align: top;
+}
+
+@mixin bigBlock{
+	display: block;
+	text-decoration: none;
+	background-color: #d2d2d2;
+	padding: 85.13% 21%;
+}
+
+@mixin blockH4{
+	color: $pageBack;
+	text-transform: uppercase;
+	font-family: $logoFont;
+	font-size: 1.5em;
+	margin-top: 0;
+	margin-bottom: 0.4em;
+}
+
+@mixin blockSpan{
+	color: $pageBack;
+	text-transform: uppercase;
+	font-family: $descrFont;
+	font-size: 1.1em;
+	font-style: italic;
+}
+
+@mixin emptyBlockFill{
+	padding: 50.082% 0;
+}
+
+@mixin descrBlock{
+	display: block;
+	text-decoration: none;
+	background-color: $firmGreyColor;
+	padding: 39.97% 0;
+	position: relative;
+	& h4{
+		@include blockH4;
+		&::before{
+			content: url(../images/arrow.png);
+			position: absolute;
+			left: 47%;
+			top: 23%;
+		}
+	}
+	& span{
+		@include blockSpan;
+	}
+} 
+
+.blocks{
+	width: 94.4%;
+	margin: 0 auto;
+	text-align: center;
+	&__bigAndSmall{
+		@include forBlocks;
+		&_big{
+			@include bigBlock;
+			& h4{
+				@include blockH4;
+			}
+			& span{
+				@include blockSpan;
+			}
+		}
+		&_small{
+			background-color: #c2c2c2;
+			@include emptyBlockFill;
+		}
+	}
+	&__threeOfKind{
+		@include forBlocks;
+		&_tweet{
+			background-color: #bbb;
+			padding: 29.04% 15%;
+			position: relative;
+			& p{
+				color: $pageBack;
+				font-family: $descrFont;
+				font-style: italic;
+				&::before{
+					content:url(../images/tweetbird.png);
+					position: absolute;
+					left: 45%;
+					top: 20%;
+				}
+				&::after{
+					content:'';
+					width: 1.5em;
+					height: 0.1em;
+					background-color: $pageBack;
+					position: absolute;
+					left: 33%;
+					top: 25%;
+				}	
+			}
+			& span{
+				color: $pageBack;
+				font-family: $logoFont;
+				&::before{
+					content:'';
+					width: 1.5em;
+					height: 0.1em;
+					background-color: $pageBack;
+					position: absolute;
+					right: 33%;
+					top: 25%;
+				}
+			}
+		}
+		& .little{
+			padding: 32.1% 15%;
+		}
+		&_item{
+			display: block;
+			text-decoration: none;
+			background-color: #cacaca;
+			padding: 39.97% 0;
+			& h4{
+				@include blockH4;
+			}
+			& span {
+				@include blockSpan;
+			}
+		}
+		&_descr{
+			@include descrBlock;
+		}
+		&_empty{
+			background-color: #dbdbdb;
+			@include emptyBlockFill;
+		}
+	}
+	&__smallAndBig{
+		@include forBlocks;
+		& .blocks_smallAndBig_small{
+			@include descrBlock;
+		}
+		& .blocks_smallAndBig_big{
+			@include bigBlock;
+			& h4{
+				@include blockH4;
+			}
+			& span{
+				@include blockSpan;
+			}
+		}
+	}
+}
+
+.signUp{
+	@include space;
+	& h2{
+		color: $regTextColor;
+		font-family: $logoFont;
+		font-size: 2,25em;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+	& h3{
+		color: $firmGreyColor;
+		font-family: $descrFont;
+		font-size: 1.125em;
+		font-style: italic;
+	}
+	&_form{
+		&_input{
+			width: 25%;
+			height: 3em;
+			padding-left: 1em;
+			color: $firmGreyColor;
+			font-family: $logoFont;
+			font-style: italic;
+			border: 1px solid $firmGreyColor;
+		}
+		&_button{
+			width: 5%;
+			height: 3em;
+			vertical-align: top;
+			color: $pageBack;
+			font-family: $logoFont;
+			background-color: $orangeColor;
+			border: 1px solid $orangeColor;
+		}
+	}
+}
+
+@import 'import/slider';
+
+@import 'import/footer';
+
+@import 'import/responsive';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

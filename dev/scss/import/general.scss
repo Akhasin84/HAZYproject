@@ -1,0 +1,15 @@
+body{
+	margin: 0;
+	font-size: 100%;
+	// fontsize 16px
+	background-color: $bodyBack;
+}
+
+.page_wrapper{
+	width: 100%;
+	// width 1250px
+	max-width: 1250px;
+	margin: 3% auto;
+	padding-bottom: 5%;
+	background-color: $pageBack;
+}

@@ -1,0 +1,30 @@
+.header
+	.header__logo
+		h3.header__logo_text SH
+	ul.nav
+		li.nav__item: a.nav__item_link(href="category.html") Woman
+		li.nav__item: a.nav__item_link(href="category.html") Men
+		li.nav__item: a.nav__item_link(href="category.html") Kids
+		li.nav__item: a.nav__item_link(href="category.html") Comming Soon
+		li.nav__item: a.nav__item_link(href="index.html") About
+	.header__infoBlock
+		.header__infoBlock_login
+			- var username = "Michal"
+			if login
+				img(src="images/userpic.png").
+				span Hi, #{username}(<a href="#" class="out">logout</a>)
+			else
+				img(src="images/userpic.png").
+				span: a(href="#") Log In
+		.header__infoBlock_basket
+			img(src="images/basket.png")
+			if chosedItems == 0
+				span Basket (0)
+			else
+				span Basket (#{chosedItems})
+		.header__infoBlock_search
+			if search
+				input(type="text" placeholder="Seach something...")
+				a(href="#")<img src="images/searchondark.png">
+			else
+				a(href="#" class="nosearch")<img src="images/serchonwhite.png">
